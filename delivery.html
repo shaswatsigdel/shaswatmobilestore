@@ -1,0 +1,133 @@
+
+<html>
+<head>
+   
+    <link rel="stylesheet" href="animate.css">
+
+    <style>
+        .logo{
+            background-color: rgb(21, 220, 51);
+            flex-direction: column;
+            float: left;
+            
+            width: 100%;
+        }
+        body { font-family: Arial, sans-serif;
+                text-decoration: ;
+                 
+                 color: rgb(0, 0, 0);}
+                 h1{
+                    margin-top: 50px;
+                 }
+    </style>
+</head>
+<body><div class="logo">
+    <a href="index.html">
+        <img src="logo.jpg" align="left" hight="150" width="150"></a> <h1 > <center> Delivery details and Payment:</center></div></h1>
+    
+<div class="container">
+  
+    <form action="">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">billing address</h3>
+
+                <div class="inputBox">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="inputBox">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your number" required>
+                </div>
+                <div class="inputBox">
+                    <span>Address :</span>
+                    <input type="text" placeholder="Enter full address">
+                </div>
+                <div class="inputBox">
+                    <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>state :</span>
+                        <input type="text" placeholder="District">
+                    </div>
+                    <div class="inputBox">
+                        <span>Province :</span>
+                        <input type="text" placeholder="Province">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">payment</h3>
+                
+
+                <div class="inputBox1">
+                    <span>cards accepted : <br></span>
+                    <img src="card_img.png" alt="">
+                </div>
+                <div class="inputBox">
+                    <span>name on card :</span>
+                    <input type="text" placeholder="Shaswat sigdel">
+                </div>
+                <div class="inputBox">
+                  
+                    <img src="QR Code.jpeg" height="200" width="250">
+                </div>
+                
+                </div>
+
+            
+    
+        </div>
+        <br>
+        <button id="submit-button" class="button">Complete the order</button>
+<script>
+        document.getElementById("submit-button").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById("popup-container").style.display = "block";
+          });
+          
+          
+          document.getElementById("close-button").addEventListener("click", function() {
+            document.getElementById("popup-container").style.display = "none";
+          });</script>
+
+<div id="popup-container">
+  <div class="popup-content">
+    <h2>Thank You for Your Purchase.</h2>
+    <p align="left">
+<br>
+<br>
+
+        Our customer service people will definitely contact you as soon as possible.<br><br>
+        
+        We will be very glad to assist you with any questions you have and give you all information about your order.<br><br>
+        
+        Thank you, again, for your purchase from the mobile store. If you have any problems with your purchase, feel free to contact us at any time.<br><br>
+        
+        You can get in touch with us any time, by email or live chat.<br><br>
+        
+        Best regards,<br> <br><br>
+        
+        Shaswat.</p>
+    <button id="close-button" class="button1">Close</button>
+  </div>
+</div>
+
+       
+        
+    </form>
+
+</div>    
+</div>
+</body>
+</html>
