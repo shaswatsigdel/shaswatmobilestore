@@ -132,18 +132,61 @@ botton{
     </form>
     </div>
 <style>
-img{
-    float: left;
-}
-    p { background-color: aquamarine;
-        color: rgb(14, 13, 13);
-  font-family: "Times New Roman", Times, serif;
-}
-table{
-background-color: rgb(54, 181, 213);
-border: #6a24c0 2;
+ 
 
-}
+  
+
+
+swiper-container {
+      width: 65%;
+      height: 70%;
+      align-items: center;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 10%;
+      height: 100%;
+      
+    }
+
+    .autoplay-progress {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--swiper-theme-color);
+    }
+
+    .autoplay-progress svg {
+      --progress: 0;
+      position: absolute;
+      left: 0;
+      top: 0px;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      stroke-width: 4px;
+      stroke: var(--swiper-theme-color);
+      fill: none;
+      stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+      stroke-dasharray: 125.6;
+      transform: rotate(-90deg);
+    }
 </style>
 </front>
 <br>
@@ -153,19 +196,38 @@ border: #6a24c0 2;
 
 <body bgcolor="white" background="bg2.jpg" ><br><br><br>
 
-    <marquee  behaviour="alternate" boader="1" onmouseover="this.stop()" onmouseout= "this.start()" hspace="100" scrollamount="50"> 
-        <table>
-      <tr><th>  <a href="oneplus.html"><img src="oneplus1 (1).jpg" height="400" style="width:500"></a></th>
-        <th><a href="iphone 14.html"><img src="iphone1.jpg" height="400" style="width:500"></a></th>
-        <th><a href="nothing.html"><img src="nothing1.jpg" height="400" style="width:500"></a></th>
-        <th><a href="Asus ROG Phone 7 Pro.html"><img src="rog5.jpeg" height="400" style="width:500"></a></th>
-        <th><a href="samsungs22.html"><img src="Samsung-Galaxy-S22-Ultra-Phantom-Black.jpg" height="400" style="width:500"></a></th>
-        <th><a href="Samsung Galaxy Z Flip.html"><img src="flip2.jpg" height="400" style="width:500"></a></th>
-        <th><a href="Samsung Galaxy Z Fold3.html"><img src="fold2.jpg" height="400" style="width:500"></a></th>
-        <th><a href="POCO X3 Pro.html"><img src="poco2.jpg" height="400" style="width:500"></a></th>
+  <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+  centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+  <swiper-slide> <a href="oneplus.html"><img src="Best-OnePlus-phone.jpg" height="400" style="width:100%"></a></swiper-slide>
+  <swiper-slide><a href="iphone 14.html"><img src="iphone-14 slide.png" height="400" style="width:100%"></a></swiper-slide>
+  <swiper-slide><a href="samsungs22.html"><img src="S22-Series-New-Offers-Etc.jpg" height="400" style="width:100%"></a></swiper-slide>
+  <swiper-slide><a href="Samsung Galaxy Z Flip.html"><img src="flip3.jpg" height="400" style="width:100%"></a></swiper-slide>
+  <swiper-slide><a href="Samsung Galaxy Z Fold3.html"><img src="samsang fold.jpg" height="400" style="width:100%"></a></swiper-slide>
+  <swiper-slide><a href="Oppo Reno8 Pro.html"><img src="oppobig.jpg" height="400" style="width:100%"></a></swiper-slide>
+  <swiper-slide><a href="rogbig.jpg"><img src="rogbig.jpg" height="400" style="width:100%"></a></swiper-slide>
+  <swiper-slide><a href="POCO X3 Pro.html"><img src="pocobig.jpg" height="400" style="width:100%"></a></swiper-slide>
+  <swiper-slide><a href="nothing.html"><img src="nothingbig.jpg" height="400" style="width:100%"></a></swiper-slide>
+  <div class="autoplay-progress" slot="container-end">
+    
+    <span></span>
+  </div>
+</swiper-container>
 
-    </table>
-        </marquee>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  const progressCircle = document.querySelector(".autoplay-progress svg");
+  const progressContent = document.querySelector(".autoplay-progress span");
+
+  const swiperEl = document.querySelector("swiper-container");
+  swiperEl.addEventListener("autoplaytimeleft", (e) => {
+    const [swiper, time, progress] = e.detail;
+    progressCircle.style.setProperty("--progress", 1 - progress);
+    progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+  });
+</script>
 
 
 
@@ -179,8 +241,7 @@ border: #6a24c0 2;
 	  <div class="card">
 		<img src="iphone121.jpg" style="width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%;">
 		<div class="container">
-		  <h2><center>Apple iPhone 14 Pro Max 128GB <br>
-			  NPR. <s>214,990</s> 207,990</h2></center>
+		  <h2><center>Apple iPhone 14 Pro Max 128GB </h2></center>
 
 		  
 		  <p></p>
@@ -194,8 +255,7 @@ border: #6a24c0 2;
         <div class="card">
           <img src="Samsung-Galaxy-S22-Ultra-Phantom-Black.jpg"   style="width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%;">
           <div class="container">
-            <h2><center>SAMSUNG S22 Ultra Cell Phone 512GB<br>
-		    NPR. <s>169,999</s> 179,999   </h2></center>
+            <h2><center>SAMSUNG S22 Ultra Cell Phone 512GB</h2></center>
   
             
             <p></p>
@@ -209,9 +269,7 @@ border: #6a24c0 2;
         <div class="card">
           <img src="nord oneplus.jpg"   style="width:100% ; height:100%; width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%;">
           <div class="container">
-            <h2><center>OnePlus Nord N20 5G (256GB)
-		    <br>
-		    NPR. <s>43,000</s> 40,000</h2></center>
+            <h2><center>OnePlus Nord N20 5G (256GB)</h2></center>
             <p></p>
             <p></p>
             <p><a href="delivery.html"><button class="button">Buy</button></p></a>
@@ -223,8 +281,7 @@ border: #6a24c0 2;
         <div class="card">
           <img src="Nothing-phone-1-White.jpg"   style="width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%;">
           <div class="container">
-            <h2><center>Nothing Phone (1) 5G (8/256GB)<br>
-		     NPR. <s>57,999</s> 55,000</h2></center>
+            <h2><center>Nothing Phone (1) 5G (8/256GB)</h2></center>
             <p></p>
             <p></p>
             <p><a href="delivery.html"><button class="button">Buy</button></p></a>
@@ -236,9 +293,7 @@ border: #6a24c0 2;
         <div class="card">
           <img src="pocoo.jpg"   style="width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%; ">
           <div class="container">
-            <h2><center>Xiaomi Poco X3 Pro 6/128GB
-		    <br>
-		  NPR. <s>24,999</s>  23,999</h2></center>
+            <h2><center>Xiaomi Poco X3 Pro 6/128GB</h2></center>
             <p></p>
             <p></p>
             <p><a href="delivery.html"><button class="button">Buy</button></p></a>
@@ -250,8 +305,7 @@ border: #6a24c0 2;
         <div class="card">
           <img src="samsang fold.jpg"   style="width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%;">
           <div class="container">
-            <h2><center>SAMSUNG Galaxy Z Fold 4
-		    <br>NPR. 244,999</h2></center>
+            <h2><center>SAMSUNG Galaxy Z Fold 4</h2></center>
             <p></p>
             <p></p>
             <p><a href="delivery.html"><button class="button">Buy</button></p></a>
@@ -263,8 +317,7 @@ border: #6a24c0 2;
         <div class="card">
           <img src="oppo.png"   style="width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%;">
           <div class="container">
-            <h2><center>OPPO Reno8 Pro 5G<br>
-		NPR. <s>56,999</s>  55,999    </h2></center>
+            <h2><center>OPPO Reno8 Pro 5G </h2></center>
             <p></p>
             <p></p>
             <p><a href="delivery.html"><button class="button">Buy</button></p></a>
@@ -276,8 +329,7 @@ border: #6a24c0 2;
         <div class="card">
           <img src="galaxy-z-flip4-main-1024x628.jpg"   style="width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%;">
           <div class="container">
-            <h2><center>SAMSUNG Galaxy Z Flip 4 <br>
-		    NPR.144,999</h2></center>
+            <h2><center>SAMSUNG Galaxy Z Flip 4 </h2></center>
             <p></p>
             <p></p>
             <p><a href="delivery.html"><button class="button">Buy</button></p></a>
@@ -289,8 +341,7 @@ border: #6a24c0 2;
         <div class="card">
           <img src="asus-rog-phone6-pro-01.jpg"   style="width:90% ; height:90%; padding-left:5%; padding-right:5%; padding-bottom:5%; padding-top:5%;">
           <div class="container">
-            <h2><center>Asus ROG Phone 5<br>
-		 NPR. <s>154,999</s> 152,499   </h2></center>
+            <h2><center>Asus ROG Phone 5</h2></center>
             <p></p>
             <p></p>
             <p><a href="delivery.html"><button class="button">Buy</button></p></a>
